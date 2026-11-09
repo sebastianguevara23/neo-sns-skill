@@ -16,15 +16,17 @@ así que siempre tiene que funcionar.
 
 - [x] `git init` local y `.gitignore`.
 - [x] `plans/` con decisiones, arquitectura y este plan.
-- [ ] Crear el repo privado `sebastianguevara23/neo-sns-skill` y subir `main`.
-- [ ] Estructura de carpetas de `arquitectura.md` §3, con `.claude-plugin/plugin.json` y
-      `marketplace.json` (versión `0.1.0`) y un `SKILL.md` mínimo.
-- [ ] `tools/sincronizar-marca.py`: copia `neo-tokens.json` y los logos desde
+- [x] Crear el repo privado `sebastianguevara23/neo-sns-skill` y subir `main`.
+- [x] Base de la estructura de `arquitectura.md` §3, con `.claude-plugin/plugin.json` y
+      `marketplace.json` (versión `0.1.0`) y un `SKILL.md` mínimo. Las demás carpetas se
+      crean en la fase que les da contenido.
+- [x] `tools/sincronizar-marca.py`: copia `neo-tokens.json` y los logos desde
       `../neo-design-skill` y escribe `tokens/ORIGEN.json` con la versión de origen
-      (hoy 1.2.0).
-- [ ] Montserrat TTF estática desde el repositorio oficial de Google Fonts, con `OFL.txt`:
-      Regular, Medium, SemiBold, Bold, ExtraBold, Black y las cursivas que use el Brandbook.
-- [ ] `README.md` para quien mantiene la skill y `CHANGELOG.md`.
+      (1.2.0). Con `--revisar` avisa si neo-design cambió.
+- [x] Montserrat TTF estática con `OFL.txt`, generada por `tools/preparar-fuentes.py` desde
+      la variable del repositorio oficial de Google Fonts (versión 9.000): de 400 a 900,
+      cada peso con su cursiva.
+- [x] `README.md` para quien mantiene la skill y `CHANGELOG.md`.
 
 **Terminado cuando:** `npx skills add sebastianguevara23/neo-sns-skill -g --all` instala
 `neo-redes` y Claude Code la reconoce.

@@ -1,0 +1,9 @@
+{
+  "name": "neo-redes",
+  "description": "Piezas de redes sociales y comunicación interna con la marca NEO: posts, carruseles y stories de Instagram y LinkedIn, banners de correo, fondos para reuniones y pantallas, entregadas en PDF editable en Canva y en PNG.",
+  "version": "0.1.0",
+  "author": {
+    "name": "NEO Consulting"
+  },
+  "skills": "./skills/"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "neo-redes",
+  "metadata": {
+    "description": "Skills internas de NEO Consulting para crear piezas de redes y comunicación interna con la marca NEO."
+  },
+  "owner": {
+    "name": "NEO Consulting"
+  },
+  "plugins": [
+    {
+      "name": "neo-redes",
+      "description": "Piezas de redes y comunicación interna con la marca NEO, editables en Canva: posts, carruseles, stories, banners de correo, fondos para reuniones y pantallas.",
+      "version": "0.1.0",
+      "author": { "name": "NEO Consulting" },
+      "source": "./",
+      "category": "design",
+      "tags": ["design", "brand", "social-media", "instagram", "linkedin", "canva"]
+    }
+  ]
+}

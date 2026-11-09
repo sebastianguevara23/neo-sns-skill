@@ -1,0 +1,16 @@
+{
+  "fuente": "neo-design-skill",
+  "version": "1.2.0",
+  "commit": "28b8c893576871c5d5c94f322cdd02ab8d1ac907",
+  "cambios_sin_commit": false,
+  "fecha": "2026-11-09",
+  "archivos": {
+    "tokens/neo-tokens.json": "82bf35c709571ee740b85e00efca7983e686a3d88e333c628ca740023e1333d2",
+    "assets/logo/neo-25-navy.svg": "21d477969323024c1f0d0b3d894856b14a3a44c3be963f10d4d67f875542b973",
+    "assets/logo/neo-25-white.svg": "91481cd80937e744491ba8fbcffca6413c74f6eb4ffdebd14cbf0f9399633127",
+    "assets/logo/neo-navy.svg": "34866616f7d367a689f2270100c05972c7633cc26da06f91048f5b188256af78",
+    "assets/logo/neo-white.svg": "365f6c91804fa0254726055833b1c63d268a09ac3151f31d589c07b04c04aca1",
+    "assets/logo/neo-isotipo-navy.svg": "57d3d96db214a1472496e7bcd852265db9ed07022bf1251b121f035162867352",
+    "assets/logo/neo-isotipo-white.svg": "60b1356d5288d6c7ae53a959d19b551c9ae3e7d85bc0e0125629987549a3f7dc"
+  }
+}

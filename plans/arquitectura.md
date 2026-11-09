@@ -83,6 +83,7 @@ neo-sns-skill/
 │                                render_pdf, render_png, validador, comparación, kit
 ├── tools/                       mantenimiento (no lo usa marketing)
 │   ├── sincronizar-marca.py     copia tokens y logos desde neo-design
+│   ├── preparar-fuentes.py      genera las TTF estáticas de Montserrat
 │   └── medir-brandbook.py       extrae medidas de las miniaturas del Brandbook
 ├── tests/                       piezas de ejemplo, casos que deben fallar, autotest
 ├── plans/
@@ -321,7 +322,7 @@ en Windows.
 |---|---|---|
 | Colores, pesos tipográficos | `neo-design/tokens/neo-tokens.json` | `tools/sincronizar-marca.py`, que registra la versión en `ORIGEN.json` |
 | Logos e isotipo | `neo-design/assets/logo/` | Mismo script |
-| Montserrat | Repositorio oficial de Google Fonts (OFL) | TTF estáticas incluidas en la skill. neo-design solo trae woff2 recortadas, que no sirven para generar PDF |
+| Montserrat | Repositorio oficial de Google Fonts (OFL) | `tools/preparar-fuentes.py` genera las TTF estáticas desde la variable y las incluye en la skill. neo-design solo trae woff2 recortadas, que no sirven para generar PDF |
 | Escala tipográfica, retícula y degradados de piezas | Brandbook, páginas 10, 13 y 18 a 20 | `redes-tokens.json`, propio de esta skill; las medidas salen de `tools/medir-brandbook.py` |
 | Íconos | Lucide, trazo 2 px | Subconjunto en SVG con su licencia |
 

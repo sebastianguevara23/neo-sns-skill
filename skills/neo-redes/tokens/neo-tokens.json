@@ -1,0 +1,979 @@
+{
+  "$schema": "https://www.designtokens.org/schemas/2025.10/format.json",
+  "$description": "Fuente única de la línea gráfica NEO para software. Todo lo demás (CSS, Tailwind, shadcn, gráficos, DESIGN.md) se genera o se valida contra este archivo con scripts/build-tokens.mjs. No editar los derivados a mano.",
+  "$extensions": {
+    "neo": {
+      "version": "1.2.0",
+      "sources": [
+        "Brandbook NEO Consulting, Sistema Visual v1.0 (2026): escalas Deep Navy y Royal Blue, colores semánticos, Montserrat, iconografía de trazo 2 px.",
+        "mcp-presentaciones/design_knowledge/tokens.yaml (neo_historical_v2) y la referencia Credicorp Taller 1 v7, aprobada por diseño NEO el 2026-09-22: azul canónico 2D5BFF, cards, radios, sombra card.",
+        "Decisiones de la sesión de diseño del 2026-10-16 (estados afinados a la escala navy, modo oscuro obligatorio, radios en px, movimiento).",
+        "Decisión del 2026-11-07 (modo oscuro): el fondo pasa al Deep Navy alterno del Brandbook (#050917, Escala Deep Navy, pág. 6) y las superficies oscuras bajan de croma (escala night) con la misma claridad. El azul de marca queda para acciones, selección y datos."
+      ],
+      "legacy": {
+        "#2B5BFC": "Azul del Brandbook v1.0 y de neo-landing. Superado por #2D5BFF; se migra (aviso, no error)."
+      }
+    }
+  },
+  "color": {
+    "$type": "color",
+    "brand": {
+      "deep-navy": {
+        "$value": "#000033",
+        "$description": "Primario dominante. Texto principal en claro, barra lateral y superficies de marca."
+      },
+      "royal-blue": {
+        "$value": "#2D5BFF",
+        "$description": "Azul canónico NEO. Acción principal, enlaces, kicker, énfasis y foco."
+      },
+      "blue-soft": {
+        "$value": "#7E99FE",
+        "$description": "Azul suave. Solo sobre fondos oscuros como texto, o como relleno decorativo; nunca texto sobre blanco (2.67:1)."
+      },
+      "blue-pale": {
+        "$value": "#C5D5F7",
+        "$description": "Azul pálido. Fondos de selección, celdas negativas de tablas comparativas y bordes de tabla comparativa."
+      },
+      "periwinkle": {
+        "$value": "#9AAFFE",
+        "$description": "Énfasis del modo oscuro (separator_blue). Enlaces y títulos resaltados sobre navy (9.5:1)."
+      },
+      "white": {
+        "$value": "#FFFFFF"
+      }
+    },
+    "navy": {
+      "$description": "Escala Deep Navy del Brandbook. Son los únicos neutros permitidos: grises con tinte navy. Prohibidos los grises puros.",
+      "50": {
+        "$value": "#F2F4F8",
+        "$description": "Navy Ice. Fondo de página en claro, encabezado de tabla operativa."
+      },
+      "100": {
+        "$value": "#E1E6EE",
+        "$description": "Glacial Tint. Bordes por defecto, divisores."
+      },
+      "200": {
+        "$value": "#BAC7D9",
+        "$description": "Soft Steel. Bordes fuertes; texto secundario en oscuro."
+      },
+      "300": {
+        "$value": "#8DA3C0",
+        "$description": "Slate Mist. Texto deshabilitado; placeholder en oscuro."
+      },
+      "400": {
+        "$value": "#5E7CA1",
+        "$description": "Classic Steel. Íconos secundarios; texto solo a 18 px o más (4.31:1)."
+      },
+      "450": {
+        "$value": "#527198",
+        "$description": "Derivado NEO (no está en el Brandbook): placeholder en claro, 5.0:1 sobre blanco."
+      },
+      "500": {
+        "$value": "#395882",
+        "$description": "Corporate Blue. Texto secundario en claro (7.26:1)."
+      },
+      "600": {
+        "$value": "#223C63",
+        "$description": "Admiral Navy. Bordes en oscuro."
+      },
+      "700": {
+        "$value": "#132647",
+        "$description": "Abyss Blue. Superficie elevada en oscuro."
+      },
+      "800": {
+        "$value": "#000033",
+        "$description": "Deep Navy."
+      },
+      "900": {
+        "$value": "#1A1A2E",
+        "$description": "Dark Charcoal. Solo para el degradado Night Tech."
+      }
+    },
+    "night": {
+      "$description": "Escala night (derivada NEO): neutros del modo oscuro con el tinte del Deep Navy y croma bajo, para que el azul de marca sea acento y no el fondo. Misma claridad que las superficies navy anteriores, así que los contrastes se mantienen.",
+      "ground": {
+        "$value": "#050917",
+        "$description": "Fondo del modo oscuro. Deep Navy alterno del Brandbook (Escala Deep Navy, pág. 6: «Deep Navy #000033 / #050917»)."
+      },
+      "sunken": {
+        "$value": "#080D1B",
+        "$description": "Barra lateral, encabezado de tabla y superficies hundidas en oscuro."
+      },
+      "surface": {
+        "$value": "#101524",
+        "$description": "Cards y paneles en oscuro."
+      },
+      "raised": {
+        "$value": "#191F2F",
+        "$description": "Superficies elevadas y skeletons en oscuro."
+      },
+      "hover": {
+        "$value": "#202637",
+        "$description": "Hover en oscuro; borde de la barra lateral."
+      },
+      "selected": {
+        "$value": "#12244D",
+        "$description": "Seleccionado, primary-soft e información en oscuro: lo único con azul de marca en las superficies."
+      },
+      "line": {
+        "$value": "#343C4F",
+        "$description": "Bordes, divisores, selección de texto y grilla de gráficos en oscuro."
+      },
+      "line-strong": {
+        "$value": "#5C657A",
+        "$description": "Bordes fuertes y contornos de controles en oscuro (3.1:1 sobre la card)."
+      },
+      "text-muted": {
+        "$value": "#C1C6D2",
+        "$description": "Texto e íconos secundarios en oscuro."
+      },
+      "placeholder": {
+        "$value": "#9AA1B2",
+        "$description": "Placeholder en oscuro (7.0:1 sobre la card)."
+      }
+    },
+    "blue": {
+      "$description": "Escala de acción construida sobre el azul canónico, con pasos del Brandbook y de presentaciones.",
+      "50": {
+        "$value": "#EEF2FF",
+        "$description": "Royal Mist. Fondo de información y de fila seleccionada."
+      },
+      "100": {
+        "$value": "#E0E7FF",
+        "$description": "Electric Hint. Hover de elementos seleccionados."
+      },
+      "200": {
+        "$value": "#C5D5F7",
+        "$description": "Pale Blue."
+      },
+      "300": {
+        "$value": "#9AAFFE",
+        "$description": "Periwinkle."
+      },
+      "400": {
+        "$value": "#7E99FE",
+        "$description": "Blue soft."
+      },
+      "500": {
+        "$value": "#2D5BFF",
+        "$description": "Royal Blue canónico."
+      },
+      "600": {
+        "$value": "#234BE9",
+        "$description": "Hover del primario (6.45:1 con texto blanco)."
+      },
+      "700": {
+        "$value": "#1E3ECC",
+        "$description": "Pressed del primario; texto de información."
+      },
+      "800": {
+        "$value": "#172A91",
+        "$description": "Deep Royal."
+      },
+      "900": {
+        "$value": "#101C5C",
+        "$description": "Imperial Dark."
+      }
+    },
+    "success": {
+      "$description": "Verde afinado a la escala navy (mismas luminosidades OKLCH). 500 = indicador (≥3:1), 700 = texto (6.8:1), 50 = fondo suave.",
+      "50": {
+        "$value": "#E9F9EC"
+      },
+      "100": {
+        "$value": "#CFEFD6"
+      },
+      "200": {
+        "$value": "#9CD6AB"
+      },
+      "300": {
+        "$value": "#5FB77A"
+      },
+      "400": {
+        "$value": "#37A45F"
+      },
+      "500": {
+        "$value": "#009249"
+      },
+      "600": {
+        "$value": "#057E3F"
+      },
+      "700": {
+        "$value": "#046933"
+      },
+      "800": {
+        "$value": "#024922"
+      },
+      "900": {
+        "$value": "#003014"
+      }
+    },
+    "warning": {
+      "$description": "Ámbar afinado a la escala navy. 500 = indicador, 700 = texto (7.45:1), 50 = fondo suave.",
+      "50": {
+        "$value": "#FFF2E3"
+      },
+      "100": {
+        "$value": "#FAE1C4"
+      },
+      "200": {
+        "$value": "#E9BD88"
+      },
+      "300": {
+        "$value": "#D0933F"
+      },
+      "400": {
+        "$value": "#BE7C02"
+      },
+      "500": {
+        "$value": "#A56C06"
+      },
+      "600": {
+        "$value": "#905C00"
+      },
+      "700": {
+        "$value": "#774C03"
+      },
+      "800": {
+        "$value": "#543400"
+      },
+      "900": {
+        "$value": "#382101"
+      }
+    },
+    "error": {
+      "$description": "Rojo afinado a la escala navy. 500 = indicador, 700 = texto (7.87:1), 50 = fondo suave. También es el color destructivo.",
+      "50": {
+        "$value": "#FEF1EF"
+      },
+      "100": {
+        "$value": "#FFDCD9"
+      },
+      "200": {
+        "$value": "#FDAEA7"
+      },
+      "300": {
+        "$value": "#EA7C75"
+      },
+      "400": {
+        "$value": "#DB5F5A"
+      },
+      "500": {
+        "$value": "#CA4644"
+      },
+      "600": {
+        "$value": "#B43635"
+      },
+      "700": {
+        "$value": "#9C2225"
+      },
+      "800": {
+        "$value": "#701316"
+      },
+      "900": {
+        "$value": "#4B0B0D"
+      }
+    }
+  },
+  "theme": {
+    "$description": "Roles semánticos. Los componentes usan SOLO estos roles (var(--neo-<rol>)), nunca la escala directa, para que el modo oscuro funcione sin tocar el componente. En oscuro, los fondos de estado son el color del estado al 16 % sobre la superficie navy (y al 38 % para el borde): calmos, no rojo o verde saturado.",
+    "light": {
+      "bg": "{color.navy.50}",
+      "surface": "{color.brand.white}",
+      "surface-raised": "{color.brand.white}",
+      "surface-sunken": "{color.navy.50}",
+      "surface-hover": "{color.blue.50}",
+      "surface-selected": "{color.blue.50}",
+      "border": "{color.navy.100}",
+      "border-strong": "{color.navy.200}",
+      "text": "{color.brand.deep-navy}",
+      "text-secondary": "{color.navy.500}",
+      "text-placeholder": "{color.navy.450}",
+      "text-disabled": "{color.navy.300}",
+      "text-inverse": "{color.brand.white}",
+      "title": "{color.brand.deep-navy}",
+      "kicker": "{color.brand.royal-blue}",
+      "emphasis": "{color.brand.royal-blue}",
+      "link": "{color.brand.royal-blue}",
+      "link-hover": "{color.blue.700}",
+      "icon": "{color.brand.deep-navy}",
+      "icon-secondary": "{color.navy.400}",
+      "primary": "{color.blue.500}",
+      "primary-hover": "{color.blue.600}",
+      "primary-pressed": "{color.blue.700}",
+      "primary-text": "{color.brand.white}",
+      "primary-soft": "{color.blue.50}",
+      "focus": "{color.blue.500}",
+      "accent-bar": "{color.blue.500}",
+      "selection": "{color.blue.200}",
+      "sidebar-bg": "{color.brand.deep-navy}",
+      "sidebar-border": "{color.brand.deep-navy}",
+      "sidebar-text": "{color.brand.white}",
+      "sidebar-text-muted": "{color.navy.200}",
+      "sidebar-icon": "{color.blue.300}",
+      "sidebar-hover": "rgba(126, 153, 254, 0.12)",
+      "sidebar-active": "rgba(126, 153, 254, 0.20)",
+      "sidebar-indicator": "{color.blue.500}",
+      "success-bg": "{color.success.50}",
+      "success-border": "{color.success.200}",
+      "success-solid": "{color.success.500}",
+      "success-text": "{color.success.700}",
+      "warning-bg": "{color.warning.50}",
+      "warning-border": "{color.warning.200}",
+      "warning-solid": "{color.warning.500}",
+      "warning-text": "{color.warning.700}",
+      "error-bg": "{color.error.50}",
+      "error-border": "{color.error.200}",
+      "error-solid": "{color.error.500}",
+      "error-text": "{color.error.700}",
+      "info-bg": "{color.blue.50}",
+      "info-border": "{color.blue.200}",
+      "info-solid": "{color.blue.500}",
+      "info-text": "{color.blue.700}",
+      "skeleton": "{color.navy.50}",
+      "skeleton-highlight": "{color.navy.100}",
+      "scrim": "rgba(0, 0, 51, 0.48)",
+      "table-head-bg": "{color.navy.50}",
+      "compare-head-bg": "{color.brand.deep-navy}",
+      "compare-border": "{color.blue.200}",
+      "compare-highlight": "{color.blue.500}",
+      "compare-negative": "{color.blue.200}"
+    },
+    "dark": {
+      "bg": "{color.night.ground}",
+      "surface": "{color.night.surface}",
+      "surface-raised": "{color.night.raised}",
+      "surface-sunken": "{color.night.sunken}",
+      "surface-hover": "{color.night.hover}",
+      "surface-selected": "{color.night.selected}",
+      "border": "{color.night.line}",
+      "border-strong": "{color.night.line-strong}",
+      "text": "{color.brand.white}",
+      "text-secondary": "{color.night.text-muted}",
+      "text-placeholder": "{color.night.placeholder}",
+      "text-disabled": "{color.night.line-strong}",
+      "text-inverse": "{color.brand.deep-navy}",
+      "title": "{color.brand.white}",
+      "kicker": "{color.blue.300}",
+      "emphasis": "{color.blue.300}",
+      "link": "{color.blue.300}",
+      "link-hover": "{color.blue.200}",
+      "icon": "{color.brand.white}",
+      "icon-secondary": "{color.night.text-muted}",
+      "primary": "{color.blue.500}",
+      "primary-hover": "{color.blue.600}",
+      "primary-pressed": "{color.blue.700}",
+      "primary-text": "{color.brand.white}",
+      "primary-soft": "{color.night.selected}",
+      "focus": "{color.blue.300}",
+      "accent-bar": "{color.blue.500}",
+      "selection": "{color.night.line}",
+      "sidebar-bg": "{color.night.sunken}",
+      "sidebar-border": "{color.night.hover}",
+      "sidebar-text": "{color.brand.white}",
+      "sidebar-text-muted": "{color.night.text-muted}",
+      "sidebar-icon": "{color.blue.300}",
+      "sidebar-hover": "rgba(126, 153, 254, 0.12)",
+      "sidebar-active": "rgba(126, 153, 254, 0.20)",
+      "sidebar-indicator": "{color.blue.400}",
+      "success-bg": "#17292F",
+      "success-border": "#1F433A",
+      "success-solid": "{color.success.400}",
+      "success-text": "{color.success.300}",
+      "warning-bg": "#282529",
+      "warning-border": "#47382C",
+      "warning-solid": "{color.warning.400}",
+      "warning-text": "{color.warning.300}",
+      "error-bg": "#2D222E",
+      "error-border": "#513039",
+      "error-solid": "{color.error.400}",
+      "error-text": "{color.error.300}",
+      "info-bg": "{color.night.selected}",
+      "info-border": "{color.night.line}",
+      "info-solid": "{color.blue.400}",
+      "info-text": "{color.blue.300}",
+      "skeleton": "{color.night.raised}",
+      "skeleton-highlight": "{color.night.hover}",
+      "scrim": "rgba(0, 0, 0, 0.6)",
+      "table-head-bg": "{color.night.sunken}",
+      "compare-head-bg": "{color.blue.900}",
+      "compare-border": "{color.night.line}",
+      "compare-highlight": "{color.blue.500}",
+      "compare-negative": "{color.night.hover}"
+    }
+  },
+  "contrast": {
+    "$description": "Pares que build-tokens.mjs verifica en cada tema. min = razón WCAG mínima. Si alguno falla, el build falla.",
+    "pairs": [
+      {
+        "fg": "text",
+        "bg": "bg",
+        "min": 4.5
+      },
+      {
+        "fg": "text",
+        "bg": "surface",
+        "min": 4.5
+      },
+      {
+        "fg": "text-secondary",
+        "bg": "surface",
+        "min": 4.5
+      },
+      {
+        "fg": "text-secondary",
+        "bg": "bg",
+        "min": 4.5
+      },
+      {
+        "fg": "text-placeholder",
+        "bg": "surface",
+        "min": 4.5
+      },
+      {
+        "fg": "text-placeholder",
+        "bg": "bg",
+        "min": 4.5
+      },
+      {
+        "fg": "link",
+        "bg": "surface",
+        "min": 4.5
+      },
+      {
+        "fg": "kicker",
+        "bg": "bg",
+        "min": 4.5
+      },
+      {
+        "fg": "primary-text",
+        "bg": "primary",
+        "min": 4.5
+      },
+      {
+        "fg": "primary-text",
+        "bg": "primary-hover",
+        "min": 4.5
+      },
+      {
+        "fg": "sidebar-text",
+        "bg": "sidebar-bg",
+        "min": 4.5
+      },
+      {
+        "fg": "sidebar-text-muted",
+        "bg": "sidebar-bg",
+        "min": 4.5
+      },
+      {
+        "fg": "success-text",
+        "bg": "success-bg",
+        "min": 4.5
+      },
+      {
+        "fg": "success-text",
+        "bg": "surface",
+        "min": 4.5
+      },
+      {
+        "fg": "warning-text",
+        "bg": "warning-bg",
+        "min": 4.5
+      },
+      {
+        "fg": "warning-text",
+        "bg": "surface",
+        "min": 4.5
+      },
+      {
+        "fg": "error-text",
+        "bg": "error-bg",
+        "min": 4.5
+      },
+      {
+        "fg": "error-text",
+        "bg": "surface",
+        "min": 4.5
+      },
+      {
+        "fg": "info-text",
+        "bg": "info-bg",
+        "min": 4.5
+      },
+      {
+        "fg": "success-solid",
+        "bg": "surface",
+        "min": 3
+      },
+      {
+        "fg": "warning-solid",
+        "bg": "surface",
+        "min": 3
+      },
+      {
+        "fg": "error-solid",
+        "bg": "surface",
+        "min": 3
+      },
+      {
+        "fg": "focus",
+        "bg": "surface",
+        "min": 3
+      },
+      {
+        "fg": "border-strong",
+        "bg": "surface",
+        "min": 1.4
+      }
+    ]
+  },
+  "font": {
+    "family": {
+      "$type": "fontFamily",
+      "sans": {
+        "$value": [
+          "Montserrat",
+          "ui-sans-serif",
+          "system-ui",
+          "-apple-system",
+          "Segoe UI",
+          "sans-serif"
+        ],
+        "$description": "Tipografía institucional única."
+      },
+      "mono": {
+        "$value": [
+          "ui-monospace",
+          "SFMono-Regular",
+          "Menlo",
+          "Consolas",
+          "Liberation Mono",
+          "monospace"
+        ],
+        "$description": "Solo para código, IDs técnicos y valores que deban alinearse por carácter."
+      }
+    },
+    "weight": {
+      "$type": "fontWeight",
+      "regular": {
+        "$value": 400
+      },
+      "medium": {
+        "$value": 500
+      },
+      "semibold": {
+        "$value": 600
+      },
+      "bold": {
+        "$value": 700
+      },
+      "extrabold": {
+        "$value": 800
+      },
+      "black": {
+        "$value": 900
+      }
+    }
+  },
+  "typography": {
+    "$type": "typography",
+    "$description": "Escala de aplicaciones (no la de piezas de 1920 px del Brandbook). Mínimo absoluto 12 px.",
+    "kicker": {
+      "$value": {
+        "fontSize": "12px",
+        "fontWeight": 600,
+        "lineHeight": 1.33,
+        "letterSpacing": "0.08em",
+        "textTransform": "uppercase"
+      },
+      "$description": "Contexto de navegación sobre el título (módulo · periodo). Nunca un eslogan."
+    },
+    "page-title": {
+      "$value": {
+        "fontSize": "28px",
+        "fontWeight": 800,
+        "lineHeight": 1.15,
+        "letterSpacing": "-0.01em"
+      },
+      "$description": "Uno solo por pantalla."
+    },
+    "section-title": {
+      "$value": {
+        "fontSize": "20px",
+        "fontWeight": 800,
+        "lineHeight": 1.25,
+        "letterSpacing": "-0.005em"
+      }
+    },
+    "card-title": {
+      "$value": {
+        "fontSize": "16px",
+        "fontWeight": 800,
+        "lineHeight": 1.3
+      }
+    },
+    "body": {
+      "$value": {
+        "fontSize": "14px",
+        "fontWeight": 400,
+        "lineHeight": 1.5
+      },
+      "$description": "Cuerpo en interfaces densas."
+    },
+    "body-strong": {
+      "$value": {
+        "fontSize": "14px",
+        "fontWeight": 600,
+        "lineHeight": 1.5
+      }
+    },
+    "reading": {
+      "$value": {
+        "fontSize": "16px",
+        "fontWeight": 400,
+        "lineHeight": 1.6
+      },
+      "$description": "Texto de lectura larga (ayudas, documentación). Máximo 72ch."
+    },
+    "label": {
+      "$value": {
+        "fontSize": "13px",
+        "fontWeight": 600,
+        "lineHeight": 1.35
+      },
+      "$description": "Etiquetas de campos, encabezados de tabla, botones."
+    },
+    "meta": {
+      "$value": {
+        "fontSize": "12px",
+        "fontWeight": 500,
+        "lineHeight": 1.4
+      },
+      "$description": "Metadatos, ayudas bajo campos, badges. Es el mínimo."
+    },
+    "metric": {
+      "$value": {
+        "fontSize": "32px",
+        "fontWeight": 900,
+        "lineHeight": 1.05,
+        "letterSpacing": "-0.01em"
+      },
+      "$description": "Cifra destacada, en azul."
+    },
+    "display": {
+      "$value": {
+        "fontSize": "44px",
+        "fontWeight": 900,
+        "lineHeight": 1.05,
+        "letterSpacing": "-0.02em"
+      },
+      "$description": "Solo login, estados vacíos grandes y páginas públicas."
+    }
+  },
+  "radius": {
+    "$type": "dimension",
+    "bar": {
+      "$value": "2px",
+      "$description": "Barra de acento, indicador de tab y del ítem activo. Solo piezas lineales, nunca contenedores."
+    },
+    "xs": {
+      "$value": "3px",
+      "$description": "Badges, checkboxes, celdas de selección."
+    },
+    "sm": {
+      "$value": "5px",
+      "$description": "Botones, inputs, selects, chips, ítems de menú."
+    },
+    "md": {
+      "$value": "6px",
+      "$description": "Cards, popovers, diálogos, toasts, cajones. Es el máximo."
+    },
+    "full": {
+      "$value": "9999px",
+      "$description": "Pills: tags, avatares, switches, indicador de tabs."
+    }
+  },
+  "space": {
+    "$type": "dimension",
+    "$description": "Base 4 px; el ritmo del Brandbook es 12 / 24 / 48.",
+    "1": {
+      "$value": "4px"
+    },
+    "2": {
+      "$value": "8px"
+    },
+    "3": {
+      "$value": "12px"
+    },
+    "4": {
+      "$value": "16px"
+    },
+    "5": {
+      "$value": "20px"
+    },
+    "6": {
+      "$value": "24px"
+    },
+    "8": {
+      "$value": "32px"
+    },
+    "10": {
+      "$value": "40px"
+    },
+    "12": {
+      "$value": "48px"
+    },
+    "16": {
+      "$value": "64px"
+    }
+  },
+  "size": {
+    "$type": "dimension",
+    "control-sm": {
+      "$value": "32px"
+    },
+    "control": {
+      "$value": "40px"
+    },
+    "control-lg": {
+      "$value": "48px"
+    },
+    "sidebar": {
+      "$value": "248px"
+    },
+    "sidebar-collapsed": {
+      "$value": "64px"
+    },
+    "topbar": {
+      "$value": "64px"
+    },
+    "content-max": {
+      "$value": "1600px",
+      "$description": "Ancho máximo del contenido en pantallas muy anchas; centrado."
+    },
+    "form-max": {
+      "$value": "720px"
+    },
+    "reading-max": {
+      "$value": "72ch"
+    },
+    "accent-bar-width": {
+      "$value": "4px"
+    },
+    "accent-bar-height": {
+      "$value": "24px"
+    },
+    "icon": {
+      "$value": "20px"
+    },
+    "icon-sm": {
+      "$value": "16px"
+    }
+  },
+  "shadow": {
+    "$type": "shadow",
+    "card": {
+      "light": "0 3px 9px rgba(0, 0, 0, 0.07)",
+      "dark": "0 3px 9px rgba(0, 0, 0, 0.35)",
+      "$description": "Sombra oficial de la card blanca sin borde (Credicorp v7: blur 6.75 pt, distancia 2.25 pt, 90°, negro 7 %)."
+    },
+    "overlay": {
+      "light": "0 12px 32px -8px rgba(0, 0, 51, 0.18), 0 2px 6px rgba(0, 0, 51, 0.06)",
+      "dark": "0 12px 32px -8px rgba(0, 0, 0, 0.6), 0 2px 6px rgba(0, 0, 0, 0.4)",
+      "$description": "Popovers, menús, toasts."
+    },
+    "dialog": {
+      "light": "0 24px 64px -16px rgba(0, 0, 51, 0.28)",
+      "dark": "0 24px 64px -16px rgba(0, 0, 0, 0.7)",
+      "$description": "Diálogos y cajones."
+    },
+    "accent": {
+      "light": "0 1px 4px rgba(0, 0, 0, 0.14)",
+      "dark": "0 1px 4px rgba(0, 0, 0, 0.4)",
+      "$description": "Barra de acento junto al título."
+    }
+  },
+  "border": {
+    "$type": "dimension",
+    "hairline": {
+      "$value": "1px"
+    },
+    "card": {
+      "$value": "1.5px",
+      "$description": "Card blanca con borde azul y botón secundario (2 px en la referencia de slides = 1.5 px CSS)."
+    },
+    "focus": {
+      "$value": "2px"
+    }
+  },
+  "motion": {
+    "duration": {
+      "$type": "duration",
+      "$description": "Salir siempre es más rápido que entrar: salida = 70 % de la entrada.",
+      "instant": {
+        "$value": "100ms",
+        "$description": "hover, press, foco"
+      },
+      "fast": {
+        "$value": "160ms",
+        "$description": "tooltip, dropdown, chip, checkbox"
+      },
+      "base": {
+        "$value": "240ms",
+        "$description": "popover, tabs, acordeón, toast, cambio de tema"
+      },
+      "slow": {
+        "$value": "320ms",
+        "$description": "diálogo, cajón, colapso de la barra lateral"
+      },
+      "page": {
+        "$value": "400ms",
+        "$description": "entrada de contenido al cambiar de vista"
+      },
+      "chart": {
+        "$value": "600ms",
+        "$description": "dibujo de gráficos y conteo de cifras"
+      },
+      "spinner": {
+        "$value": "800ms",
+        "$description": "vuelta del spinner (bucle)"
+      },
+      "highlight": {
+        "$value": "1200ms",
+        "$description": "fila recién guardada y pulso del estado «guardando» (una vez o en bucle suave)"
+      },
+      "shimmer": {
+        "$value": "1600ms",
+        "$description": "brillo del skeleton (bucle)"
+      },
+      "stagger": {
+        "$value": "40ms",
+        "$description": "retraso entre bloques en cascada; máximo 6 bloques"
+      },
+      "loading-delay": {
+        "$value": "300ms",
+        "$description": "espera antes de mostrar cualquier indicador de carga"
+      }
+    },
+    "easing": {
+      "$type": "cubicBezier",
+      "out": {
+        "$value": [
+          0.22,
+          1,
+          0.36,
+          1
+        ],
+        "$description": "Entrada: arranca decidido y frena largo. La curva de firma NEO."
+      },
+      "in": {
+        "$value": [
+          0.4,
+          0,
+          1,
+          1
+        ],
+        "$description": "Salida."
+      },
+      "in-out": {
+        "$value": [
+          0.65,
+          0,
+          0.35,
+          1
+        ],
+        "$description": "Cambios de tamaño en el lugar: barra lateral, acordeón, indicador de tabs."
+      }
+    },
+    "distance": {
+      "$type": "dimension",
+      "enter": {
+        "$value": "8px",
+        "$description": "Desplazamiento vertical de entrada de contenido."
+      },
+      "scale-from": {
+        "$value": "0.98",
+        "$description": "Escala inicial de diálogos y popovers."
+      }
+    }
+  },
+  "breakpoint": {
+    "$type": "dimension",
+    "$description": "Desktop primero. Matriz obligatoria de verificación en px CSS: 1280, 1366, 1536, 1920, 2560. Móvil fuera de alcance por ahora (no debe romperse, no se optimiza).",
+    "drawer": {
+      "$value": "1024px",
+      "$description": "Bajo esto la barra lateral es un cajón."
+    },
+    "compact": {
+      "$value": "1280px",
+      "$description": "Bajo esto la barra lateral arranca colapsada."
+    },
+    "wide": {
+      "$value": "1920px"
+    },
+    "verify": {
+      "$value": [
+        1280,
+        1366,
+        1536,
+        1920,
+        2560
+      ]
+    }
+  },
+  "chart": {
+    "$description": "Orden de series tomado de presentaciones (brand_rules.chart), extendido para software.",
+    "light": {
+      "series": [
+        "#2D5BFF",
+        "#000033",
+        "#7E99FE",
+        "#5E7CA1",
+        "#9AAFFE",
+        "#BAC7D9",
+        "#C5D5F7"
+      ],
+      "text": "#395882",
+      "grid": "#E1E6EE",
+      "axis": "#BAC7D9",
+      "positive": "#009249",
+      "negative": "#CA4644",
+      "lineWidth": 2.5,
+      "gridWidth": 1
+    },
+    "dark": {
+      "series": [
+        "#7E99FE",
+        "#FFFFFF",
+        "#2D5BFF",
+        "#BAC7D9",
+        "#9AAFFE",
+        "#5E7CA1",
+        "#C5D5F7"
+      ],
+      "text": "#C1C6D2",
+      "grid": "#343C4F",
+      "axis": "#5C657A",
+      "positive": "#37A45F",
+      "negative": "#DB5F5A",
+      "lineWidth": 2.5,
+      "gridWidth": 1
+    }
+  },
+  "gradient": {
+    "$description": "Solo en superficies de marca (login, estados vacíos, onboarding, páginas públicas) y en la barra de progreso de navegación.",
+    "brand-glow": {
+      "$value": "linear-gradient(90deg, #2D5BFF 0%, #7BA4F7 100%)",
+      "$description": "Barra de progreso de navegación y divisores de 3 px."
+    },
+    "deep-corporate": {
+      "$value": "linear-gradient(135deg, #000033 0%, #2D5BFF 100%)"
+    },
+    "soft-atmosphere": {
+      "$value": "linear-gradient(180deg, #FFFFFF 0%, #E8F0FE 100%)"
+    },
+    "night-tech": {
+      "$value": "linear-gradient(135deg, #1A1A2E 0%, #000033 100%)"
+    }
+  }
+}

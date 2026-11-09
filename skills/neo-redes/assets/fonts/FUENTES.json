@@ -1,0 +1,18 @@
+{
+  "fuente": "https://raw.githubusercontent.com/google/fonts/main/ofl/montserrat/",
+  "licencia": "SIL Open Font License 1.1 (OFL.txt)",
+  "archivos": {
+    "Montserrat-Regular.ttf": "Version 9.000",
+    "Montserrat-Medium.ttf": "Version 9.000",
+    "Montserrat-SemiBold.ttf": "Version 9.000",
+    "Montserrat-Bold.ttf": "Version 9.000",
+    "Montserrat-ExtraBold.ttf": "Version 9.000",
+    "Montserrat-Black.ttf": "Version 9.000",
+    "Montserrat-Italic.ttf": "Version 9.000",
+    "Montserrat-MediumItalic.ttf": "Version 9.000",
+    "Montserrat-SemiBoldItalic.ttf": "Version 9.000",
+    "Montserrat-BoldItalic.ttf": "Version 9.000",
+    "Montserrat-ExtraBoldItalic.ttf": "Version 9.000",
+    "Montserrat-BlackItalic.ttf": "Version 9.000"
+  }
+}
