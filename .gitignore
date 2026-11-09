@@ -6,3 +6,7 @@ Thumbs.db
 
 # Piezas generadas al probar la skill en este repo
 piezas/
+
+# Salidas de la prueba de importación en Canva (se regeneran)
+tests/prueba-canva/salida/
+dist/

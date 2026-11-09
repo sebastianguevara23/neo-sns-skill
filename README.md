@@ -38,9 +38,11 @@ skills/neo-redes/
 ├── tokens/neo-tokens.json   colores y tipografía, copiados de neo-design (no editar)
 ├── tokens/ORIGEN.json       de qué versión de neo-design vienen
 ├── assets/logo/             «NEO | 25 años», NEO e isotipo, en navy y blanco
-└── assets/fonts/            Montserrat TTF estática, 400 a 900 con cursivas (OFL)
-tools/                       mantenimiento: marca y fuentes
-plans/                       decisiones, arquitectura y plan
+├── assets/fonts/            Montserrat TTF estática, 400 a 900 con cursivas (OFL)
+└── scripts/redes.py         punto de entrada (por ahora, `entorno`)
+tools/                       mantenimiento: marca, fuentes y ZIP de prueba para Claude.ai
+tests/prueba-canva/          generador de la prueba de importación en Canva (fase 1)
+plans/                       decisiones, arquitectura, plan y resultados de la prueba
 ```
 
 ## Mantener la skill

@@ -45,11 +45,14 @@ de 3 láminas.
 
 Tareas:
 
-- [ ] Generar variantes del PDF:
+- [x] Generar variantes del PDF con `tests/prueba-canva/generar.py`:
   - A. ReportLab, un objeto de texto por párrafo.
   - B. ReportLab, un objeto por línea.
   - C. skia-python.
-  - En cada una, fuente incrustada completa y recortada.
+  - Ninguna de las dos librerías permite incrustar la fuente completa: ambas la recortan a
+    los caracteres usados, así que esa comparación no se hace.
+- [x] Revisar los PDF por dentro: fuentes, tabla Unicode y objetos de texto
+      (`prueba-canva.md`).
 - [ ] Importar cada variante en una cuenta de Canva Pro y registrar, elemento por
       elemento:
   - ¿El texto es editable? ¿Llega en un cuadro por párrafo o por línea?
@@ -61,13 +64,14 @@ Tareas:
   - ¿Cuánto se mueven los saltos de línea al recomponer?
 - [ ] Importar el carrusel: ¿Canva crea un diseño de varias páginas? Subir el mismo PDF
       como documento a LinkedIn (sin publicar) para ver la vista previa.
-- [ ] Entorno de Claude.ai: subir a mano un ZIP con una skill mínima que corra
-      `redes.py entorno`, y registrar qué librerías trae, si permite `pip install` y si
-      puede rasterizar el PDF.
-- [ ] Entorno local: instalar `uv` y correr el script en Mac y en Windows desde Claude
-      Code, partiendo de una máquina sin Python.
-- [ ] Escribir `plans/prueba-canva.md` con los resultados y capturas, y actualizar
-      `arquitectura.md` §5.3 (renderizador elegido) y §8 (cómo llega cada elemento).
+- [x] `scripts/redes.py entorno` y `tools/empaquetar-zip.py` para la prueba en Claude.ai.
+- [ ] Entorno de Claude.ai: subir el ZIP y registrar qué librerías trae, si permite
+      `pip install` y si puede rasterizar el PDF.
+- [ ] Entorno local: instalar `uv` y correr el script en Mac y en Windows, partiendo de una
+      máquina sin Python. (Linux ya pasó.)
+- [x] `plans/prueba-canva.md` con la guía paso a paso y la tabla de resultados.
+- [ ] Completar los resultados y las capturas, decidir, y actualizar `arquitectura.md` §5.3
+      (renderizador elegido) y §8 (cómo llega cada elemento).
 
 **Terminado cuando:** hay una variante de PDF que llega a Canva con texto editable en
 Montserrat y formas editables, el renderizador está elegido y los scripts corren en

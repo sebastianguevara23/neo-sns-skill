@@ -26,3 +26,7 @@ user-invocable: true
   mano; los trae `tools/sincronizar-marca.py`). `tokens/ORIGEN.json` dice de qué versión.
 - `assets/logo/`: lockup «NEO | 25 años», NEO e isotipo, en navy y blanco.
 - `assets/fonts/`: Montserrat TTF estática (OFL), de 400 a 900 con sus cursivas.
+- `scripts/redes.py entorno`: revisa que este entorno pueda generar piezas (Python,
+  librerías, fuentes y un PDF de prueba). En Claude Code se corre con
+  `uv run <skill>/scripts/redes.py entorno`; en Claude.ai, con `python3` y, si falta algo,
+  `pip install` de lo que indique. Agrega `--json` para el informe completo.
