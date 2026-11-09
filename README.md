@@ -11,9 +11,10 @@ Canva** y en PNG.
   Brandbook.
 - **Editable:** textos vivos, formas y colores editables y espacios marcados para las fotos.
 
-> **Estado: en construcción (0.1.0).** La fase 0 dejó la base del repo y la marca. El
-> plan completo está en [`plans/`](plans/): [decisiones](plans/decisiones.md),
-> [arquitectura](plans/arquitectura.md) y [plan de implementación](plans/plan-implementacion.md).
+> **Estado: en construcción (0.1.0).** Dónde quedó el trabajo, qué falta y cómo retomarlo
+> en otra máquina: [`plans/estado.md`](plans/estado.md). El plan completo está en
+> [`plans/`](plans/): [decisiones](plans/decisiones.md), [arquitectura](plans/arquitectura.md)
+> y [plan de implementación](plans/plan-implementacion.md).
 
 ## Instalación (mientras se construye)
 
