@@ -11,6 +11,30 @@ Fase 1, en curso: prueba de importación en Canva.
 - `tools/empaquetar-zip.py`: ZIP de la skill para probarla en Claude.ai.
 - `plans/prueba-canva.md`: guía de la prueba y tabla de resultados.
 
+Revisión con las piezas que marketing ya publica (carpeta de Drive «Estrategia de redes
+sociales»):
+
+- `plans/referencias-reales.md`: inventario, anatomía de cada serie, colores y tamaños
+  medidos, correcciones y las seis decisiones que se tomaron después.
+- Plans corregidos: fondo oscuro `#000033` y claro en degradado `#E8F0FE` → `#FFFFFF`,
+  carruseles con botón de flecha en vez de numeración, degradado de foto como tratamiento
+  principal, logo según el formato, cifras con fuente obligatoria, portadas de reel y de
+  destacado, y `tools/medir-referencias.py` en lugar de `medir-brandbook.py`.
+- Montserrat Light y Light Italic (300), que pide el Brandbook para citas.
+- `plantillas/` fuera de git: más de 300 MB y fotos personales de colaboradores.
+
+Decisiones tomadas después de la revisión:
+
+- Catálogo v1 con las series reales (bienvenida individual y grupal, story de nuevo
+  ingreso, día a día, Tech Update, cita, portada de reel y de destacado); las plantillas del
+  Brandbook pasan a la v1.1.
+- Entrega para Canva o Figma, según pida la persona: el destino entra en la ficha como
+  dato obligatorio y, si el pedido no lo dice, Claude lo pregunta. La prueba de la fase 1
+  suma Figma y decide si basta el PDF o hace falta un SVG con texto vivo.
+- Mínimos de texto de 28 px para cuerpo y 24 px para secundarios.
+- Sin emojis, sin dominio ni usuario de redes en las piezas, y recortes de personas en
+  Canva.
+
 ## 0.1.0 — 2026-11-09
 
 Fase 0: base del repo.

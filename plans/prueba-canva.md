@@ -1,7 +1,10 @@
-# Fase 1: prueba de importación en Canva y de entornos
+# Fase 1: prueba de importación en Canva y Figma, y de entornos
 
-Guía y registro de la prueba que decide el renderizador y cómo se escribe el texto en el
-PDF (`arquitectura.md` §5.3 y §8). Hasta completarla no se construye el motor.
+Guía y registro de la prueba que decide el renderizador, cómo se escribe el texto en el
+PDF y qué archivo se entrega para Figma (`arquitectura.md` §5.3 y §8). Hasta completarla no
+se construye el motor. Figma se sumó el 2026-11-09, cuando se decidió que la skill entregue
+para Canva o para Figma, según pida la persona (`decisiones.md`): hay que confirmar que
+las dos salidas funcionan.
 
 ## Qué se probó ya (2026-11-09)
 
@@ -26,11 +29,17 @@ sistema y sin `uv`, el comando informa qué falta y cómo instalarlo.
 
 ## Qué falta (lo hace una persona)
 
+No hace falta ninguna conexión entre Claude y Canva o Figma: la skill entrega archivos y la
+persona los importa a mano. Los 6 PDF están en `tests/prueba-canva/salida/` del repo (rama
+`fase-1`): se bajan desde GitHub o se toman del clon local. En Windows con WSL, la carpeta
+se abre en el Explorador como `\\wsl.localhost\<distro>\home\<usuario>\…\neo-sns-skill\tests\prueba-canva\salida`.
+
 ### 1. Importar en Canva
 
-Con una cuenta de Canva Pro, importa los 6 PDF de `tests/prueba-canva/salida/` (`A-pieza.pdf`,
-`A-carrusel.pdf`, `B-…`, `C-…`). En la página de inicio de Canva: **Subir** (o arrastra el PDF
-a la ventana) y ábrelo como diseño editable. Ten a mano `hoja-variantes.png` para comparar.
+Con la cuenta de Canva Pro, importa los 6 PDF (`A-pieza.pdf`, `A-carrusel.pdf`, `B-…`, `C-…`).
+En la página de inicio de Canva: **Crear un diseño → Importar archivo** (o arrastra el PDF a
+la ventana); Canva lo abre en el editor como diseño editable. Ten a mano
+`hoja-variantes.png` para comparar.
 
 Para cada variante, revisa y anota en la tabla de resultados:
 
@@ -61,7 +70,36 @@ puede, y déjalas en `tests/prueba-canva/capturas/`.
 **Opcional, LinkedIn:** sube `A-carrusel.pdf` como documento en una publicación nueva, mira
 la vista previa y descártala sin publicar.
 
-### 2. Entorno de Claude.ai
+### 2. Importar en Figma
+
+Figma por sí solo no convierte un PDF en capas editables: si se arrastra al lienzo, llega
+como algo que no se puede editar. Para obtener capas hace falta un plugin de Figma (no es
+una conexión con Claude). El más usado es **pdf.to.design**, de ‹div›RIOTS, que procesa el
+PDF en la propia máquina. Revisa qué permite su plan gratis antes de empezar.
+
+1. En un archivo nuevo de Figma Design, arrastra `A-pieza.pdf` al lienzo y anota cómo llega
+   (se espera que no sea editable; sirve para confirmarlo).
+2. Instala el plugin: **Recursos (Shift + I) → Plugins → busca «pdf.to.design»**.
+3. Ábrelo e importa los 6 PDF con la opción de capas editables (no la de imagen).
+
+Con lo que importó el plugin, revisa los puntos 1 a 18 de la tabla de Canva, con estos
+cambios:
+
+- **3 y 14:** en Figma, el texto es una capa de texto; mira si el cuerpo llega en una capa o
+  en una por línea, y si al agregar palabras la caja crece o se desborda.
+- **4:** en el panel derecho, ¿dice Montserrat con el peso correcto? ¿Avisa de fuentes
+  faltantes?
+- **15:** en el panel de capas, ¿aparece algún nombre útil o solo «Group» y «Vector»?
+- **16:** ¿el carrusel llega como 3 marcos (frames) separados?
+
+Si con el plugin el texto no llega editable en ninguna variante, avisa: se agrega a
+`generar.py` una variante **D** en SVG con texto vivo y se repite la prueba arrastrándola al
+lienzo. Ojo: hay reportes de que Figma convierte el texto de un SVG en letras vectoriales;
+si pasa, la salida para Figma se replantea (`arquitectura.md` §12).
+
+Capturas en `tests/prueba-canva/capturas/figma-…`.
+
+### 3. Entorno de Claude.ai
 
 1. `python3 tools/empaquetar-zip.py` arma `dist/neo-redes-0.1.0.zip`.
 2. En Claude.ai, activa *Configuración → Capacidades → Ejecución de código y creación de
@@ -71,7 +109,7 @@ la vista previa y descártala sin publicar.
    `pip install reportlab pypdfium2 svglib skia-python` y vuelve a correrlo».
 4. Pega aquí ambos resultados.
 
-### 3. Entorno local en Mac y Windows
+### 4. Entorno local en Mac y Windows
 
 En una máquina sin Python, con el ZIP descomprimido:
 
@@ -106,6 +144,33 @@ permisos de administrador, cuánto tardó la primera vez y el resultado.
 | 17 Espacio de foto | | | |
 | 18 Fondo degradado | | | |
 
+### Figma
+
+Arrastre nativo de `A-pieza.pdf` (sin plugin):
+
+Tabla con lo importado por pdf.to.design:
+
+| # | A (por párrafo) | B (por línea) | C (skia) | D (SVG, si hizo falta) |
+|---|---|---|---|---|
+| 1 Tamaño | | | | |
+| 2 Texto editable | | | | |
+| 3 Capas de texto | | | | |
+| 4 Fuente | | | | |
+| 5 Cursiva y color mixtos | | | | |
+| 6 Espaciado del kicker | | | | |
+| 7 Colores | | | | |
+| 8 Duotono | | | | |
+| 9 Foto | | | | |
+| 10 Luz difusa | | | | |
+| 11 Divisor degradado | | | | |
+| 12 Logo | | | | |
+| 13 Ícono y botón | | | | |
+| 14 Reflujo | | | | |
+| 15 Nombres de capas | | | | |
+| 16 Carrusel | | | | |
+| 17 Espacio de foto | | | | |
+| 18 Fondo degradado | | | | |
+
 ### Entornos
 
 | Entorno | Resultado |
@@ -120,14 +185,18 @@ permisos de administrador, cuánto tardó la primera vez y el resultado.
 En este orden:
 
 1. **Texto editable en un cuadro por párrafo** (o, como mínimo, por línea) con Montserrat
-   reconocida.
+   reconocida, en Canva y en Figma.
 2. **Formas, colores y transparencias editables**, y una forma cómoda de reemplazar fotos.
 3. **Corre en Claude.ai** sin instalar nada, o con un `pip install` que funcione.
 4. Fidelidad visual (interletraje).
 
 Si gana A o B, se elige ReportLab y skia-python sale de las dependencias. Si solo C deja el
-texto bien, se elige skia-python. Si ninguna deja el texto editable, se detiene el proyecto y
-se replantea la salida con el equipo (`plan-implementacion.md`, fase 1).
+texto bien, se elige skia-python. Si ninguna deja el texto editable en Canva, se detiene el
+proyecto y se replantea la salida con el equipo (`plan-implementacion.md`, fase 1).
+
+Para Figma: si la variante elegida también llega bien, se entrega el mismo PDF; si no, se
+entrega el SVG de la variante D. Si tampoco el SVG funciona, se sigue con Canva y se busca
+otra salida para Figma antes de la fase 4.
 
 ## Decisión
 

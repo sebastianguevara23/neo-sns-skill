@@ -1,14 +1,16 @@
 # neo-redes
 
 **Piezas de redes y comunicación interna con la marca NEO.** Una skill para Claude que
-convierte un pedido en lenguaje simple («post de LinkedIn: buscamos ingenieros de IA,
-híbrido») en opciones con la línea gráfica NEO, y entrega la elegida en **PDF para editar en
-Canva** y en PNG.
+convierte un pedido en lenguaje simple («story de bienvenida para Ana, Consultora de
+Growth») en opciones con la línea gráfica NEO, y entrega la elegida en **el archivo para
+editar en Canva o en Figma**, según lo que pidas (si no lo dices, te pregunta), y en PNG.
 
-- **Formatos:** posts, carruseles y stories de Instagram; posts y carruseles de LinkedIn;
-  banners de correo, fondos para Teams o Zoom y pantallas.
-- **Marca:** la de neo-design (azul #2D5BFF, Montserrat), con el sistema de redes del
-  Brandbook.
+- **Formatos:** posts, carruseles y stories de Instagram; portadas de reel y de destacado;
+  posts y carruseles de LinkedIn; banners de correo, fondos para Teams o Zoom y pantallas.
+- **Plantillas v1:** las series que marketing ya publica (bienvenidas, día a día, Tech
+  Update, cita y portadas).
+- **Marca:** la de neo-design (azul #2D5BFF, Montserrat), con las piezas reales de marketing
+  y el Brandbook como referencia.
 - **Editable:** textos vivos, formas y colores editables y espacios marcados para las fotos.
 
 > **Estado: en construcción (0.1.0).** Dónde quedó el trabajo, qué falta y cómo retomarlo
@@ -39,7 +41,7 @@ skills/neo-redes/
 ├── tokens/neo-tokens.json   colores y tipografía, copiados de neo-design (no editar)
 ├── tokens/ORIGEN.json       de qué versión de neo-design vienen
 ├── assets/logo/             «NEO | 25 años», NEO e isotipo, en navy y blanco
-├── assets/fonts/            Montserrat TTF estática, 400 a 900 con cursivas (OFL)
+├── assets/fonts/            Montserrat TTF estática, 300 a 900 con cursivas (OFL)
 └── scripts/redes.py         punto de entrada (por ahora, `entorno`)
 tools/                       mantenimiento: marca, fuentes y ZIP de prueba para Claude.ai
 tests/prueba-canva/          generador de la prueba de importación en Canva (fase 1)

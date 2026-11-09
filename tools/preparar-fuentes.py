@@ -20,7 +20,10 @@ REPO = Path(__file__).resolve().parent.parent
 DESTINO = REPO / "skills" / "neo-redes" / "assets" / "fonts"
 BASE = "https://raw.githubusercontent.com/google/fonts/main/ofl/montserrat/"
 VARIABLES = {"": "Montserrat%5Bwght%5D.ttf", "Italic": "Montserrat-Italic%5Bwght%5D.ttf"}
-PESOS = {400: "Regular", 500: "Medium", 600: "SemiBold", 700: "Bold", 800: "ExtraBold", 900: "Black"}
+# Light (300) va porque el Brandbook pide Light Italic en citas y marketing lo usa en
+# titulares de contraste («Decisión», «Bienvenida al equipo»).
+PESOS = {300: "Light", 400: "Regular", 500: "Medium", 600: "SemiBold", 700: "Bold", 800: "ExtraBold",
+         900: "Black"}
 
 
 def descargar(nombre: str, carpeta: Path) -> Path:

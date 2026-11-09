@@ -18,7 +18,7 @@ from pathlib import Path
 
 SKILL = Path(__file__).resolve().parent.parent
 FUENTES = SKILL / "assets" / "fonts"
-PESOS = ["Regular", "Medium", "SemiBold", "Bold", "ExtraBold", "Black"]
+PESOS = ["Light", "Regular", "Medium", "SemiBold", "Bold", "ExtraBold", "Black"]
 ESPERADAS = [f"Montserrat-{p}.ttf" for p in PESOS] + [
     "Montserrat-Italic.ttf" if p == "Regular" else f"Montserrat-{p}Italic.ttf" for p in PESOS]
 
@@ -124,7 +124,7 @@ def entorno(como_json: bool) -> int:
         marca = "✓" if d["ok"] else ("✗" if d["obligatorio"] else "·")
         detalle = d["version"] if d["ok"] else f"no está (pip install {d['paquete']})"
         print(f"  {marca} {modulo:<10} {detalle:<34} {d['uso']}")
-    print("  ✓ Montserrat (12 TTF)" if not fuentes_faltan else "  ✗ Faltan fuentes: " + ", ".join(fuentes_faltan))
+    print(f"  ✓ Montserrat ({len(ESPERADAS)} TTF)" if not fuentes_faltan else "  ✗ Faltan fuentes: " + ", ".join(fuentes_faltan))
     for nombre, p in pruebas.items():
         print(f"  {'✓' if p['ok'] else '✗'} PDF de prueba con {nombre}" + ("" if p["ok"] else f": {p['error']}"))
     if listo:

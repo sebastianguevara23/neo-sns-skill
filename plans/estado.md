@@ -8,12 +8,23 @@ Dónde quedó el trabajo y cómo retomarlo en otra máquina. Se actualiza al cer
 | Fase | Estado | Dónde |
 |---|---|---|
 | 0. Base del repo | Cerrada | `main` (versión 0.1.0) |
-| 1. Prueba de importación en Canva y de entornos | **En curso**: falta la parte manual | Rama **`fase-1`** |
+| 1. Prueba de importación en Canva y Figma, y de entornos | **En curso**: falta la parte manual | Rama **`fase-1`** |
 | 2 en adelante | Sin empezar | — |
 
 El contrato está en [`decisiones.md`](decisiones.md), el diseño en
-[`arquitectura.md`](arquitectura.md), el orden en [`plan-implementacion.md`](plan-implementacion.md)
-y la prueba en curso en [`prueba-canva.md`](prueba-canva.md).
+[`arquitectura.md`](arquitectura.md), el orden en [`plan-implementacion.md`](plan-implementacion.md),
+la prueba en curso en [`prueba-canva.md`](prueba-canva.md) y lo aprendido de las piezas que
+marketing ya publica en [`referencias-reales.md`](referencias-reales.md).
+
+**Revisión con piezas reales (2026-11-09):** se compararon los plans con la carpeta de Drive
+«Estrategia de redes sociales». Ya se corrigieron los fondos (`#000033` y el degradado claro),
+los pesos (se agregó Montserrat Light), los carruseles (flecha en vez de «2/7»), el
+tratamiento de fotos, el logo por formato y la fuente obligatoria en las cifras, y se
+agregaron dos formatos. Después se decidieron las seis preguntas que abrió la revisión:
+catálogo v1 con las series reales, entrega para Canva **o Figma** según pida la persona
+(Claude pregunta si no lo dice), mínimos de 28 y 24 px, sin emojis, sin dominio ni usuario
+en el pie y recortes en Canva (`referencias-reales.md`). Para la fase 3 hace falta la
+carpeta de Drive descomprimida en `plantillas/` (no se versiona).
 
 ## Retomar en otra máquina
 
@@ -51,36 +62,54 @@ Detalle paso a paso en [`prueba-canva.md`](prueba-canva.md).
 - [ ] **Importar en Canva Pro** los 6 PDF de `tests/prueba-canva/salida/` (están en el repo;
       no hace falta regenerarlos) y completar la tabla de 18 puntos, con capturas en
       `tests/prueba-canva/capturas/`. Necesita una cuenta de Canva Pro de marketing.
+- [ ] **Importar en Figma** los mismos 6 PDF con el plugin pdf.to.design (Figma solo no los
+      deja editables) y completar su tabla. Si el texto no llega editable, agregar la
+      variante D (SVG con texto vivo) a `generar.py` y probarla.
 - [ ] **Claude.ai:** subir `dist/neo-redes-0.1.0.zip` y pegar el resultado de
       `python3 scripts/redes.py entorno --json`, antes y después del `pip install`.
 - [ ] **Mac y Windows:** instalar `uv` en una máquina sin Python y correr `entorno`. Anotar si
       pidió permisos de administrador y cuánto tardó la primera vez.
-- [ ] **Decidir** el renderizador con el criterio de `prueba-canva.md`, y luego:
+- [ ] **Decidir** el renderizador y el formato para Figma con el criterio de
+      `prueba-canva.md`, y luego:
   - actualizar `arquitectura.md` §5.3 y §8;
   - dejar en `redes.py` solo las dependencias de la opción elegida;
   - marcar la fase 1 en `plan-implementacion.md`, anotarla en `CHANGELOG.md` y fusionar
     `fase-1` en `main`.
 
-### Se puede adelantar sin esperar a Canva (fase 2)
+### Se puede adelantar sin esperar a Canva y Figma (fase 2)
 
 Esto no depende de qué renderizador gane, porque la escena es independiente del PDF:
 
-- `catalogo/formatos.json` con los 10 formatos, zonas seguras y mínimos de texto.
+- `catalogo/formatos.json` con los 12 formatos, zonas seguras y mínimos de texto.
 - Esquema de plantilla y su cargador.
 - Composición: retícula, márgenes, zonas seguras, decoraciones y logo.
 - Medición y corte de texto con las métricas de Montserrat (fontTools).
 - Validador sobre la escena.
-- `tools/medir-brandbook.py` (es de la fase 3, pero tampoco depende de Canva).
+- `tools/medir-referencias.py` (es de la fase 3, pero tampoco depende de Canva).
 
-Lo que sí espera el resultado: el renderizador, la holgura de las cajas de texto (depende de
-cuánto recompone Canva) y la forma de los espacios de foto.
+Lo que sí espera el resultado: el renderizador, el formato para Figma, la holgura de las
+cajas de texto (depende de cuánto recomponen Canva y Figma) y la forma de los espacios de
+foto.
 
 ### Decisiones abiertas (no bloquean)
 
 - Plan de Claude de NEO: Team o Enterprise. La sincronización automática funciona en ambos.
 - A quién se deja la skill disponible y a quién instalada por defecto (fase 7).
-- Archivos fuente de las plantillas del Brandbook (los tiene marketing).
+- Archivos fuente de las piezas reales y del Brandbook, en Figma o Canva (los tiene
+  marketing).
 - Persona con Windows para las pruebas de las fases 1 y 6.
+
+### Decisiones de la revisión de piezas reales (tomadas el 2026-11-09)
+
+Detalle en [`referencias-reales.md`](referencias-reales.md).
+
+- [x] **Catálogo v1:** las series reales (bienvenida individual y grupal, story de ingreso,
+      día a día, Tech Update, cita, portada de reel y de destacado).
+- [x] **Destino:** Canva o Figma, el que pida la persona; si no lo dice, Claude pregunta.
+- [x] **Tamaño mínimo de texto:** 28 px para cuerpo y 24 px para secundarios.
+- [x] **Emojis:** ninguno, tampoco en piezas de cultura.
+- [x] **Pie de las piezas:** ni dominio ni usuario.
+- [x] **Recortes de personas:** en Canva, con «Quitar fondo».
 
 ## Notas para no redescubrir
 
