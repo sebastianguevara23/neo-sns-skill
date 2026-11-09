@@ -6,6 +6,30 @@ se construye el motor. Figma se sumó el 2026-11-09, cuando se decidió que la s
 para Canva o para Figma, según pida la persona (`decisiones.md`): hay que confirmar que
 las dos salidas funcionan.
 
+## Giro: dibujo directo con los conectores (2026-11-09)
+
+La persona no quiere subir ni importar archivos: Claude debe mandar la pieza directo a
+Canva o a Figma. Se probó con los conectores oficiales y la versión 0.2.0 de la skill
+dibuja así, sin plantillas y sin Python. **La prueba de importación de PDF (secciones 1 a 3)
+queda en pausa**; solo se retoma si el dibujo directo no alcanza.
+
+| Prueba | Canva | Figma |
+|---|---|---|
+| Ver un diseño o archivo compartido | Sí | Sí (lectura) |
+| Escribir | Sí | **No**: pide un puesto Full |
+| Copiar un diseño compartido a la cuenta propia | Sí | — |
+| Páginas de tamaño exacto (1080 × 1920 junto a 1080 × 1350) | Sí | — |
+| Subir PNG y SVG desde la computadora | Sí (`create-upload-url` y `curl`) | — |
+| Formas con borde y esquinas redondas | Sí | — |
+| Textos con tamaño, color, negrita y alineación | Sí | — |
+| Montserrat y pesos Light, ExtraBold y Black | **No**: sale la letra por defecto, solo normal o negrita | Sí, según la documentación |
+| Degradados | No: van como PNG de fondo | Sí, según la documentación |
+
+Pieza de prueba: portada clara de Tech Update en el diseño «Prueba neo-redes · Tech Update»
+de la cuenta de Canva conectada. Quedó fiel en composición, colores y tamaños; la diferencia
+es la tipografía. Pendiente: probar si `replace_text` conserva Montserrat en cajas de muestra
+del lienzo (`skills/neo-redes/references/canva.md`).
+
 ## Qué se probó ya (2026-11-09)
 
 **Archivos de prueba.** `uv run tests/prueba-canva/generar.py` deja en
@@ -111,40 +135,44 @@ Capturas en `tests/prueba-canva/capturas/figma-…`.
 
 ### 4. Prueba con una persona en Claude Code (Mac o Windows)
 
-Sirve para confirmar que la skill se instala con `npx` desde GitHub, que Claude Code la
-reconoce y que los scripts corren en una máquina sin Python. **Todavía no genera piezas**:
-si se le pide una, Claude debe responder que la skill no está lista. Eso también se
-verifica.
+Sirve para confirmar que la skill se instala sin cuenta de GitHub y que Claude dibuja una
+pieza directo en Canva (o en Figma, si la persona tiene puesto Full). **No hay que instalar
+Python ni `uv`**: la versión 0.2.0 no corre scripts.
 
-**Antes, quien mantiene el repo:** dar acceso de lectura a la persona (GitHub → Settings →
-Collaborators, o
-`gh api -X PUT repos/sebastianguevara23/neo-sns-skill/collaborators/<usuario> -f permission=pull`).
-La persona acepta la invitación que le llega por correo.
+**La persona necesita:** Claude Code, Node 18 o superior y una cuenta de Canva (en Figma,
+además, un puesto Full).
 
-**La persona, una sola vez:**
+**Una sola vez:**
 
-1. Instalar Node 18 o superior y GitHub CLI (Windows: `winget install GitHub.cli`; Mac:
-   `brew install gh`).
-2. `gh auth login` con su cuenta, respondiendo que sí a autenticar git. Si después falla la
-   clonación, `gh auth setup-git`.
-3. Instalar la skill desde la rama, solo para Claude Code:
+1. Instalar la skill desde la rama, solo para Claude Code:
 
    ```bash
    npx skills add https://github.com/sebastianguevara23/neo-sns-skill/tree/fase-1 -g --skill neo-redes --agent claude-code -y
    ```
 
-4. Abrir Claude Code (o reiniciarlo si estaba abierto) y escribir: «¿Tienes la skill
-   neo-redes? Corre su comando `entorno` y muéstrame el resultado». Si falta `uv`, Claude
-   lo instala con uno de estos comandos y la persona solo pulsa «Permitir»:
-   - **Mac:** `curl -LsSf https://astral.sh/uv/install.sh | sh`
-   - **Windows (PowerShell):** `powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"`
-5. Pedirle una pieza («hazme un post de bienvenida para Ana») y confirmar que Claude dice
-   que la skill aún no está lista, sin improvisar una pieza.
+2. Conectar Canva (y Figma, si aplica) y luego, dentro de Claude Code, `/mcp` para iniciar
+   sesión:
 
-**Qué anotar:** sistema operativo; si la instalación con `npx` funcionó al primer intento;
-si Claude Code reconoció la skill; si `uv` pidió permisos de administrador; cuánto tardó
-`entorno` la primera vez; el resultado completo de `entorno`; y qué respondió Claude al
-pedido de la pieza.
+   ```bash
+   claude mcp add --transport http canva https://mcp.canva.com/mcp
+   ```
+
+3. En Canva, crear un diseño vacío de 1080 × 1350 llamado **«Lienzo neo-redes»** (Crear un
+   diseño → Tamaño personalizado). Claude le agrega las páginas de story y cuadrado la
+   primera vez.
+
+**La prueba:** abrir Claude Code (o reiniciarlo) y pedir, por ejemplo:
+
+- «Hazme la portada de un Tech Update sobre phishing, para Canva».
+- «Story de bienvenida para [nombre], [cargo]» (sin decir la herramienta: Claude debe
+  preguntar Canva o Figma).
+- «Una cita de [persona]: "[frase]"», en post.
+
+**Qué anotar:** sistema operativo; si la instalación funcionó al primer intento; si Claude
+preguntó lo que faltaba sin inventar; cuántas opciones propuso; si la pieza llegó a Canva
+sin subir nada a mano; qué tan fiel quedó a la línea gráfica (capturas en
+`tests/prueba-canva/capturas/`); cuánto tardó; qué hubo que arreglar a mano (tipografía,
+fotos); y el consumo de la conversación, si Claude Code lo muestra (`/cost`).
 
 ## Resultados
 

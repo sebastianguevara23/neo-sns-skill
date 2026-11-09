@@ -1,6 +1,17 @@
 # Cambios
 
-## Sin publicar
+## 0.2.0 (2026-11-09): versión de prueba con dibujo directo
+
+- La skill dibuja la pieza directo en Canva o en Figma con los conectores oficiales, sin
+  plantillas, sin archivos intermedios y sin Python ni `uv`.
+- `references/`: marca, anatomía de las series y guías para dibujar en Canva (probada) y en
+  Figma (según la documentación; falta probar con puesto Full).
+- `assets/fondos/`: degradado claro y navy con luces en PNG, porque el conector de Canva
+  solo pinta colores planos. Se regeneran con `tools/generar-fondos.py`.
+- Repo público: se instala sin cuenta de GitHub.
+- `scripts/redes.py` y `assets/fonts/` quedan del enfoque de PDF; esta versión no los usa.
+
+## Sin publicar (enfoque de PDF, en pausa)
 
 Fase 1, en curso: prueba de importación en Canva.
 

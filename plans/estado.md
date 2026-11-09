@@ -8,8 +8,17 @@ Dónde quedó el trabajo y cómo retomarlo en otra máquina. Se actualiza al cer
 | Fase | Estado | Dónde |
 |---|---|---|
 | 0. Base del repo | Cerrada | `main` (versión 0.1.0) |
-| 1. Prueba de importación en Canva y Figma, y de entornos | **En curso**: falta la parte manual | Rama **`fase-1`** |
-| 2 en adelante | Sin empezar | — |
+| 1. Prueba de entrega en Canva y Figma | **En curso**: versión 0.2.0 de prueba (dibujo directo con conectores) | Rama **`fase-1`** |
+| 2 en adelante | Sin empezar; se replantean según el resultado de la prueba | — |
+
+**Giro del 2026-11-09: dibujo directo.** La persona no quiere subir ni importar archivos.
+Se probaron los conectores oficiales: en Canva Claude puede dibujar una pieza completa
+(páginas de tamaño exacto, fondos y logos subidos, formas y textos), pero no elegir
+Montserrat ni sus pesos intermedios; en Figma puede leer, y escribir requiere puesto Full.
+La versión 0.2.0 de la skill dibuja así, sin plantillas ni Python, para probarla con una
+persona (`prueba-canva.md`, sección 4). `decisiones.md`, `arquitectura.md` y
+`plan-implementacion.md` todavía describen el enfoque de PDF: se reescriben con los
+resultados de esta prueba. El repo es público desde este día.
 
 El contrato está en [`decisiones.md`](decisiones.md), el diseño en
 [`arquitectura.md`](arquitectura.md), el orden en [`plan-implementacion.md`](plan-implementacion.md),
@@ -58,6 +67,18 @@ python3 tools/empaquetar-zip.py                   # arma dist/neo-redes-0.1.0.zi
 ### Fase 1 (bloquea la fase 2)
 
 Detalle paso a paso en [`prueba-canva.md`](prueba-canva.md).
+
+Dibujo directo (versión 0.2.0):
+
+- [ ] **Prueba con una persona** en Claude Code, con Canva conectado (sección 4).
+- [ ] **Montserrat en Canva:** probar si `replace_text` conserva la fuente en cajas de
+      muestra del «Lienzo neo-redes».
+- [ ] **Figma:** conseguir un puesto Full y probar `references/figma.md` (degradado, luces,
+      pesos de Montserrat, logo SVG).
+- [ ] **Decidir** el enfoque con los resultados y reescribir `decisiones.md`,
+      `arquitectura.md` y `plan-implementacion.md`.
+
+En pausa mientras se prueba el dibujo directo (enfoque de PDF):
 
 - [ ] **Importar en Canva Pro** los 6 PDF de `tests/prueba-canva/salida/` (están en el repo;
       no hace falta regenerarlos) y completar la tabla de 18 puntos, con capturas en

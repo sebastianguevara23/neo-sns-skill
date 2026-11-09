@@ -10,12 +10,12 @@
   "plugins": [
     {
       "name": "neo-redes",
-      "description": "Piezas de redes y comunicación interna con la marca NEO, editables en Canva: posts, carruseles, stories, banners de correo, fondos para reuniones y pantallas.",
-      "version": "0.1.0",
+      "description": "Piezas de redes y comunicación interna con la marca NEO, dibujadas directo en Canva o en Figma: posts, carruseles, stories, bienvenidas, Tech Update, citas y portadas.",
+      "version": "0.2.0",
       "author": { "name": "NEO Consulting" },
       "source": "./",
       "category": "design",
-      "tags": ["design", "brand", "social-media", "instagram", "linkedin", "canva"]
+      "tags": ["design", "brand", "social-media", "instagram", "linkedin", "canva", "figma"]
     }
   ]
 }
