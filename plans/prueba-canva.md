@@ -109,15 +109,42 @@ Capturas en `tests/prueba-canva/capturas/figma-…`.
    `pip install reportlab pypdfium2 svglib skia-python` y vuelve a correrlo».
 4. Pega aquí ambos resultados.
 
-### 4. Entorno local en Mac y Windows
+### 4. Prueba con una persona en Claude Code (Mac o Windows)
 
-En una máquina sin Python, con el ZIP descomprimido:
+Sirve para confirmar que la skill se instala con `npx` desde GitHub, que Claude Code la
+reconoce y que los scripts corren en una máquina sin Python. **Todavía no genera piezas**:
+si se le pide una, Claude debe responder que la skill no está lista. Eso también se
+verifica.
 
-- **Mac:** `curl -LsSf https://astral.sh/uv/install.sh | sh`
-- **Windows (PowerShell):** `powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"`
+**Antes, quien mantiene el repo:** dar acceso de lectura a la persona (GitHub → Settings →
+Collaborators, o
+`gh api -X PUT repos/sebastianguevara23/neo-sns-skill/collaborators/<usuario> -f permission=pull`).
+La persona acepta la invitación que le llega por correo.
 
-Luego, en una terminal nueva: `uv run neo-redes/scripts/redes.py entorno`. Anota si pidió
-permisos de administrador, cuánto tardó la primera vez y el resultado.
+**La persona, una sola vez:**
+
+1. Instalar Node 18 o superior y GitHub CLI (Windows: `winget install GitHub.cli`; Mac:
+   `brew install gh`).
+2. `gh auth login` con su cuenta, respondiendo que sí a autenticar git. Si después falla la
+   clonación, `gh auth setup-git`.
+3. Instalar la skill desde la rama, solo para Claude Code:
+
+   ```bash
+   npx skills add https://github.com/sebastianguevara23/neo-sns-skill/tree/fase-1 -g --skill neo-redes --agent claude-code -y
+   ```
+
+4. Abrir Claude Code (o reiniciarlo si estaba abierto) y escribir: «¿Tienes la skill
+   neo-redes? Corre su comando `entorno` y muéstrame el resultado». Si falta `uv`, Claude
+   lo instala con uno de estos comandos y la persona solo pulsa «Permitir»:
+   - **Mac:** `curl -LsSf https://astral.sh/uv/install.sh | sh`
+   - **Windows (PowerShell):** `powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"`
+5. Pedirle una pieza («hazme un post de bienvenida para Ana») y confirmar que Claude dice
+   que la skill aún no está lista, sin improvisar una pieza.
+
+**Qué anotar:** sistema operativo; si la instalación con `npx` funcionó al primer intento;
+si Claude Code reconoció la skill; si `uv` pidió permisos de administrador; cuánto tardó
+`entorno` la primera vez; el resultado completo de `entorno`; y qué respondió Claude al
+pedido de la pieza.
 
 ## Resultados
 
@@ -177,8 +204,9 @@ Tabla con lo importado por pdf.to.design:
 |---|---|
 | Linux (uv) | Listo: Python 3.13, ReportLab 5.1, skia-python 144.1, pypdfium2 5.15, Pillow 13, svglib 2.4 |
 | Claude.ai | Pendiente |
-| Mac (uv desde cero) | Pendiente |
-| Windows (uv desde cero) | Pendiente |
+| Instalación con `npx` desde `…/tree/fase-1` (Linux) | Funciona: instala SKILL.md, `scripts/redes.py` y las 14 fuentes; `entorno` corre desde la copia instalada. Sin la rama se instala `main`, que aún no trae `redes.py` (2026-11-09) |
+| Mac (uv desde cero, con una persona) | Pendiente |
+| Windows (uv desde cero, con una persona) | Pendiente |
 
 ## Cómo se decide
 

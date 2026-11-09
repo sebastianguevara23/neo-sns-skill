@@ -67,8 +67,9 @@ Detalle paso a paso en [`prueba-canva.md`](prueba-canva.md).
       variante D (SVG con texto vivo) a `generar.py` y probarla.
 - [ ] **Claude.ai:** subir `dist/neo-redes-0.1.0.zip` y pegar el resultado de
       `python3 scripts/redes.py entorno --json`, antes y después del `pip install`.
-- [ ] **Mac y Windows:** instalar `uv` en una máquina sin Python y correr `entorno`. Anotar si
-      pidió permisos de administrador y cuánto tardó la primera vez.
+- [ ] **Mac y Windows, con una persona en Claude Code:** instalar la skill con `npx` desde la
+      rama `fase-1` y correr `entorno` en una máquina sin Python (guía en `prueba-canva.md`,
+      sección 4). La instalación desde la rama ya se probó en Linux.
 - [ ] **Decidir** el renderizador y el formato para Figma con el criterio de
       `prueba-canva.md`, y luego:
   - actualizar `arquitectura.md` §5.3 y §8;

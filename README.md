@@ -29,6 +29,16 @@ npx skills update                                           # trae la última ve
 npx skills remove neo-redes                                 # la quita
 ```
 
+Eso instala `main`. Para probar una rama en curso (por ejemplo `fase-1`, la única que hoy
+trae `scripts/redes.py`), se usa la URL con la rama:
+
+```bash
+npx skills add https://github.com/sebastianguevara23/neo-sns-skill/tree/fase-1 -g --skill neo-redes --agent claude-code -y
+```
+
+Para traer cambios nuevos de la rama, se repite el mismo comando. La guía para quien prueba
+está en `plans/prueba-canva.md`, sección 4.
+
 Cuando la v1 esté lista, la distribuye el propietario de la organización en Claude desde
 este repo, y llega sola (y actualizada) a Claude.ai, Cowork y Claude Code.
 
