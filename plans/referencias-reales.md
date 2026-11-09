@@ -19,7 +19,7 @@ de la revisión (ver [Decisiones tomadas](#decisiones-tomadas-2026-11-09)).
 | Serie | Formato | Piezas | Hecho en |
 |---|---|---|---|
 | Día a día de un colaborador | Carrusel 4:5, 9 a 11 láminas | 4 (Andrea, Daniel, Jurgita, Meilin) | Figma |
-| Bienvenida individual («New Hire») | Carrusel 4:5, 3 láminas | 1 (Tammy) | Figma |
+| Bienvenida individual («New Hire») | Carrusel 4:5, 3 láminas | 1 | Figma |
 | Bienvenida grupal («New Hires») | Carrusel 4:5, portada + una lámina por persona | 1 | Canva |
 | Story de nuevo ingreso | Story 9:16 | 8, más una de bienvenida genérica | Sin datos (PNG) |
 | Tech Update (seguridad e IA) | Serie de 4 stories por tema | 4 temas, 16 stories | Sin datos (PNG) |
@@ -35,7 +35,7 @@ el Brandbook sigue siendo la única referencia.
 ## Lo que confirman
 
 - **Azul `#2D5BFF`.** Es el que usan las piezas recientes (Tech Update, destacados, New Hires,
-  cierre de la bienvenida de Tammy), igual que neo-design. El `#2B5BFC` del Brandbook solo
+  cierre de la bienvenida individual), igual que neo-design. El `#2B5BFC` del Brandbook solo
   aparece en la plantilla de Día a día, mezclado con `#2D5BFF`.
 - **Montserrat** en todas las piezas, sin otra familia.
 - **Fotos reales** de colaboradores y de la oficina. Nada generado con IA.
@@ -86,7 +86,7 @@ Medidas aproximadas en un lienzo de 1080 px de ancho, estimadas sobre los PNG y 
    Light azul, nombre en ExtraBold blanco, línea azul y cargo en cursiva. Recorte de la persona
    a la derecha.
 2. «Sobre ella» en Light (unos 62 px) y viñetas de unos 29 px con palabras clave en negrita.
-3. Cierre claro: «Estamos para apoyar tu crecimiento» y «¡Bienvenida, Tammy!» en Black azul.
+3. Cierre claro: «Estamos para apoyar tu crecimiento» y «¡Bienvenida, [nombre]!» en Black azul.
    La pieza real lleva el dominio al pie; la plantilla no lo lleva.
 
 ### Bienvenida grupal (carrusel 4:5)

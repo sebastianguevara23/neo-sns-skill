@@ -16,7 +16,8 @@ así que siempre tiene que funcionar.
 
 - [x] `git init` local y `.gitignore`.
 - [x] `plans/` con decisiones, arquitectura y este plan.
-- [x] Crear el repo privado `sebastianguevara23/neo-sns-skill` y subir `main`.
+- [x] Crear el repo `sebastianguevara23/neo-sns-skill` y subir `main` (privado al inicio,
+      público desde el 2026-11-09).
 - [x] Base de la estructura de `arquitectura.md` §3, con `.claude-plugin/plugin.json` y
       `marketplace.json` (versión `0.1.0`) y un `SKILL.md` mínimo. Las demás carpetas se
       crean en la fase que les da contenido.

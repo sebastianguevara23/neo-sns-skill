@@ -29,7 +29,7 @@ carpeta de Drive descomprimida en `plantillas/` (no se versiona).
 ## Retomar en otra máquina
 
 ```bash
-gh auth login                                    # con una cuenta que tenga acceso al repo privado
+gh auth login                                    # solo para hacer push; clonar no lo necesita
 git clone https://github.com/sebastianguevara23/neo-sns-skill.git
 cd neo-sns-skill
 git switch fase-1                                # el trabajo en curso no está en main
@@ -114,10 +114,9 @@ Detalle en [`referencias-reales.md`](referencias-reales.md).
 
 ## Notas para no redescubrir
 
-- **Cuentas de GitHub en la máquina original:** la cuenta activa de `gh` era **MrPepePollo**,
-  que no tiene acceso al repo privado; por eso `npx skills add` y `git push` fallan con
-  «Authentication failed». Opciones: `gh auth switch --user sebastianguevara23`, dar acceso a
-  MrPepePollo, o anteponer `GH_TOKEN=$(gh auth token --user sebastianguevara23)` al comando.
+- **`git push` falla con «Authentication failed»:** la cuenta activa de `gh` no tiene permiso
+  de escritura en el repo. Se cambia con `gh auth switch` o anteponiendo
+  `GH_TOKEN=$(gh auth token --user <cuenta>)` al comando.
 - **`uv` eligió Python 3.13** aunque el sistema tenía 3.14; ambas versiones tienen las ruedas
   de todas las librerías.
 - **skia-python 144** en Linux imprime avisos de Fontconfig sobre

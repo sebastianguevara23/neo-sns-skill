@@ -6,8 +6,8 @@ Contrato del producto. Lo complementan `arquitectura.md` (cómo se construye) y
 ## Producto
 
 - **Qué es:** la skill `neo-redes`, para que marketing y comunicación interna de NEO
-  creen piezas con la marca NEO desde Claude. Repo **privado**
-  `sebastianguevara23/neo-sns-skill`.
+  creen piezas con la marca NEO desde Claude. Repo **público** (desde el 2026-11-09, para
+  instalar sin cuenta de GitHub) `sebastianguevara23/neo-sns-skill`.
 - **Relación con neo-design:** es su hermana. neo-design aplica la marca a software;
   neo-redes la aplica a piezas. Son proyectos separados. De neo-design solo se copian
   tokens (color y tipografía), logos y fuentes. No depende de neo-design, impeccable ni
@@ -165,7 +165,7 @@ Contrato del producto. Lo complementan `arquitectura.md` (cómo se construye) y
 - **Etapa 1 (hasta terminar la v1):** instalación con
   `npx skills add sebastianguevara23/neo-sns-skill`, igual que neo-design. Solo para quien
   prueba la skill.
-- **Etapa 2 (lanzamiento):** plugin sincronizado desde el repo privado por el propietario
+- **Etapa 2 (lanzamiento):** plugin sincronizado desde el repo por el propietario
   de la organización en Claude (funciona en Team y en Enterprise). Cada push a la rama
   principal llega solo a Claude.ai, Cowork y Claude Code. Nadie de marketing necesita
   GitHub ni subir ZIP. Si resultaran ser cuentas individuales, cada persona agrega el

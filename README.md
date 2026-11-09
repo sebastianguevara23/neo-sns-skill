@@ -20,8 +20,8 @@ editar en Canva o en Figma**, según lo que pidas (si no lo dices, te pregunta),
 
 ## Instalación (mientras se construye)
 
-El repo es privado: necesitas acceso de lectura a `sebastianguevara23/neo-sns-skill`, git
-autenticado con GitHub (`gh auth login` alcanza) y Node 18 o superior.
+El repo es público: para instalar solo hace falta Node 18 o superior (no se necesita cuenta
+de GitHub).
 
 ```bash
 npx skills add sebastianguevara23/neo-sns-skill -g --all   # para tu usuario, en todos tus agentes

@@ -398,7 +398,7 @@ El `SKILL.md` contiene las reglas no negociables y el flujo; el detalle va en
 
 | Etapa | Cómo se instala | Quién |
 |---|---|---|
-| 1. Construcción y piloto | `npx skills add sebastianguevara23/neo-sns-skill -g --all` (requiere Node y acceso al repo privado). Para probar en Claude.ai, subir el ZIP a mano | Quien mantiene la skill y las personas del piloto |
+| 1. Construcción y piloto | `npx skills add sebastianguevara23/neo-sns-skill -g --all` (requiere Node). Para probar en Claude.ai, subir el ZIP a mano | Quien mantiene la skill y las personas del piloto |
 | 2. Lanzamiento | El propietario de la organización conecta el repo en *Configuración de la organización → Plugins y skills → Sincronizar desde GitHub*, con sincronización automática | Toda la organización, según la disponibilidad que se defina |
 
 - Versión semántica en `plugin.json` y `marketplace.json`; se sube en cada cambio y se
